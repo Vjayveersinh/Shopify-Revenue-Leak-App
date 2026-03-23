@@ -1,89 +1,94 @@
+<p align="center">
+  <img src="https://cdn.worldvectorlogo.com/logos/shopify.svg" alt="Shopify Logo" width="120"/>
+</p>
+
 # Revenue Leak Detection System
 
 A Shopify app project focused on helping merchants identify possible revenue leaks caused by discount inconsistencies.
 
-## Project Status
+---
 
-This project is currently **in progress**.
+## 🔍 Overview
 
-So far, I have built the **first MVP**, which focuses on checking the **discount part** of an order and identifying cases where the expected amount and final paid amount do not match correctly.
+This project analyzes Shopify orders to detect mismatches between:
 
-This is not the final version of the product. More detection logic and features are planned.
+* Order subtotal
+* Applied discounts
+* Final paid amount
+
+⚠️ **Current Stage:** MVP (Work in Progress)
+
+So far, I have built the **first MVP**, which focuses on **discount validation and basic revenue leak detection**.
 
 ---
 
-## Detailed Case Study
+## 📖 Detailed Case Study
 
 For a complete breakdown of the idea, logic, and implementation:
 
 👉 https://dc61g20ci9ox4.cloudfront.net/revenue-leak.html
 
 (This page reflects the current state of the project in detail.)
+
 ---
 
-## Current MVP
+## ⚙️ Current MVP (What Works Today)
 
-The current MVP checks:
-
-- Order subtotal
-- Applied discount
-- Final paid amount
-- Potential mismatch in discount calculation
+* Fetches Shopify order data
+* Analyzes subtotal, discount, and final paid amount
+* Detects mismatches in discount calculations
+* Displays findings in a dashboard
 
 ### Example
 
-If an order subtotal is **$100** and a **$30 discount** is applied, the expected final amount should be **$70**.
-
-If the paid amount does not align with that calculation, the app flags it as a possible finding.
-
----
-
-## What This Project Does
-
-The idea behind this project is to help detect revenue leaks in Shopify stores by reviewing order pricing logic and surfacing inconsistencies.
-
-At the current stage, the focus is limited to:
-
-- Discount validation
-- Basic revenue leak findings
-- Dashboard-based visibility for detected cases
+| Subtotal | Discount | Paid | Status                   |
+| -------- | -------- | ---- | ------------------------ |
+| $100     | $30      | $70  | ✅ Correct                |
+| $100     | $30      | $65  | ❌ Potential Revenue Leak |
 
 ---
 
-## Work in Progress
+## 🚧 Work in Progress
 
-Planned future improvements include:
+This is not the final version of the product.
 
-- Broader revenue leak detection rules
-- Tax and shipping validation
-- More advanced order anomaly checks
-- Better dashboard experience
-- Improved reporting and alerts
+Planned improvements:
 
----
-
-## Tech Stack
-
-- Shopify App
-- Node.js
-- React
-- Shopify APIs
-- AWS
+* Advanced detection logic
+* Tax and shipping validation
+* Real-time monitoring
+* Improved dashboard UI
+* Automated alerts
 
 ---
 
-## Why I Built This
+## 🛠️ Tech Stack
 
-I wanted to work on a real-world Shopify app idea that solves a meaningful business problem.
-
-Revenue leaks can happen quietly through discount errors or pricing inconsistencies, and this project is an attempt to build a tool that can help merchants catch those issues earlier.
+* Shopify App (CLI)
+* Node.js
+* React
+* Shopify APIs
+* AWS
 
 ---
 
-## Author
+## 💡 Why I Built This
+
+Revenue leaks can happen due to incorrect discount calculations or pricing inconsistencies, and they often go unnoticed.
+
+This project is an attempt to build a system that can help identify such issues early.
+
+---
+
+## 🌐 Portfolio
+
+👉 https://dc61g20ci9ox4.cloudfront.net/
+
+---
+
+## 👤 Author
 
 **Jayveersinh Vihol**
 
-LinkedIn: add-your-linkedin-here
-
-Portfolio: https://dc61g20ci9ox4.cloudfront.net/
+* LinkedIn: add-your-linkedin-link
+* Portfolio: https://dc61g20ci9ox4.cloudfront.net/
