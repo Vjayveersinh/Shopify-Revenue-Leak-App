@@ -12,6 +12,15 @@ This is not the final version of the product. More detection logic and features 
 
 ---
 
+## Detailed Case Study
+
+For a complete breakdown of the idea, logic, and implementation:
+
+👉 https://dc61g20ci9ox4.cloudfront.net/revenue-leak.html
+
+(This page reflects the current state of the project in detail.)
+---
+
 ## Current MVP
 
 The current MVP checks:
@@ -68,16 +77,6 @@ Planned future improvements include:
 I wanted to work on a real-world Shopify app idea that solves a meaningful business problem.
 
 Revenue leaks can happen quietly through discount errors or pricing inconsistencies, and this project is an attempt to build a tool that can help merchants catch those issues earlier.
-
----
-
-## Detailed Case Study
-
-For a complete breakdown of the idea, logic, and implementation:
-
-👉 https://dc61g20ci9ox4.cloudfront.net/revenue-leak.html
-
-(This page reflects the current state of the project in detail.)
 
 ---
 
