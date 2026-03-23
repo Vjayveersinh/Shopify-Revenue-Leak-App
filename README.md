@@ -71,9 +71,13 @@ Revenue leaks can happen quietly through discount errors or pricing inconsistenc
 
 ---
 
-## Portfolio
+## Detailed Case Study
 
-Portfolio: https://dc61g20ci9ox4.cloudfront.net/
+For a complete breakdown of the idea, logic, and implementation:
+
+👉 https://dc61g20ci9ox4.cloudfront.net/revenue-leak.html
+
+(This page reflects the current state of the project in detail.)
 
 ---
 
