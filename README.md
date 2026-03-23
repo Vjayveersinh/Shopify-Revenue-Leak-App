@@ -39,13 +39,6 @@ For a complete breakdown of the idea, logic, and implementation:
 * Detects mismatches in discount calculations
 * Displays findings in a dashboard
 
-### Example
-
-| Subtotal | Discount | Paid | Status                   |
-| -------- | -------- | ---- | ------------------------ |
-| $100     | $30      | $70  | ✅ Correct                |
-| $100     | $30      | $65  | ❌ Potential Revenue Leak |
-
 ---
 
 ## 🚧 Work in Progress
