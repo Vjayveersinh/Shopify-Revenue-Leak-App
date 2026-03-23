@@ -1,119 +1,86 @@
-# 🧠 Revenue Leak Detection System (Shopify App)
+# Revenue Leak Detection System
 
-A Shopify app designed to identify hidden revenue leaks caused by discount misuse and pricing inconsistencies.
+A Shopify app project focused on helping merchants identify possible revenue leaks caused by discount inconsistencies.
 
----
+## Project Status
 
-## 🔍 Overview
+This project is currently **in progress**.
 
-This project analyzes Shopify orders and detects discrepancies between:
+So far, I have built the **first MVP**, which focuses on checking the **discount part** of an order and identifying cases where the expected amount and final paid amount do not match correctly.
 
-* Expected order value
-* Applied discounts
-* Final paid amount
-
-⚠️ **Current Stage:** MVP (Minimum Viable Product)
-
-At this stage, the app focuses on **discount-related revenue leak detection**.
-
-Built as part of an ongoing effort to develop a production-ready Shopify analytics tool.
+This is not the final version of the product. More detection logic and features are planned.
 
 ---
 
-## 💡 Problem
+## Current MVP
 
-Many Shopify stores lose revenue due to:
+The current MVP checks:
 
-* Incorrect discount calculations
-* Misconfigured discount rules
-* Unexpected checkout behavior
+- Order subtotal
+- Applied discount
+- Final paid amount
+- Potential mismatch in discount calculation
 
-These issues often go unnoticed and directly impact profits.
+### Example
 
----
+If an order subtotal is **$100** and a **$30 discount** is applied, the expected final amount should be **$70**.
 
-## ⚙️ Current MVP (What Works Today)
-
-✅ Fetches Shopify order data
-✅ Analyzes subtotal, discount, and final paid amount
-✅ Detects mismatches in discount calculations
-✅ Displays identified issues in a basic dashboard
-
-### 📊 Example
-
-| Subtotal | Discount | Paid | Status                   |
-| -------- | -------- | ---- | ------------------------ |
-| $100     | $30      | $70  | ✅ Correct                |
-| $100     | $30      | $65  | ❌ Potential Revenue Leak |
+If the paid amount does not align with that calculation, the app flags it as a possible finding.
 
 ---
 
-## 🚧 Work in Progress
+## What This Project Does
 
-Planned improvements:
+The idea behind this project is to help detect revenue leaks in Shopify stores by reviewing order pricing logic and surfacing inconsistencies.
 
-* Advanced anomaly detection logic
-* Support for tax & shipping discrepancies
-* Real-time monitoring
-* Improved dashboard UI
-* Automated alerts for merchants
+At the current stage, the focus is limited to:
 
----
-
-## 🛠️ Tech Stack
-
-* **Frontend:** React / Polaris
-* **Backend:** Node.js
-* **Platform:** Shopify App (CLI)
-* **Cloud:** AWS (S3 / Lambda)
+- Discount validation
+- Basic revenue leak findings
+- Dashboard-based visibility for detected cases
 
 ---
 
-## 🚀 How It Works
+## Work in Progress
 
-1. Shopify provides order data via API
-2. App processes pricing & discount logic
-3. Compares expected vs actual payment
-4. Flags inconsistencies
-5. Displays findings
+Planned future improvements include:
 
----
-
-## 🔐 Security
-
-* Environment variables stored securely using `.env`
-* No sensitive credentials exposed
-* Follows secure API handling practices
+- Broader revenue leak detection rules
+- Tax and shipping validation
+- More advanced order anomaly checks
+- Better dashboard experience
+- Improved reporting and alerts
 
 ---
 
-## 🌐 Portfolio
+## Tech Stack
 
-👉 https://dc61g20ci9ox4.cloudfront.net/
+- Shopify App
+- Node.js
+- React
+- Shopify APIs
+- AWS
 
 ---
 
-## 👤 Author
+## Why I Built This
+
+I wanted to work on a real-world Shopify app idea that solves a meaningful business problem.
+
+Revenue leaks can happen quietly through discount errors or pricing inconsistencies, and this project is an attempt to build a tool that can help merchants catch those issues earlier.
+
+---
+
+## Portfolio
+
+Portfolio: https://dc61g20ci9ox4.cloudfront.net/
+
+---
+
+## Author
 
 **Jayveersinh Vihol**
 
-* LinkedIn: https://linkedin.com/in/YOUR-LINKEDIN
-* Portfolio: https://dc61g20ci9ox4.cloudfront.net/
+LinkedIn: add-your-linkedin-here
 
----
-
-## ⭐ Why This Project Matters
-
-This project demonstrates:
-
-* Real-world problem solving
-* Shopify app development
-* Backend + API integration
-* Building a product from MVP to scalable system
-
----
-
-## 📌 Note
-
-This project is actively being developed.
-Current implementation focuses on **discount-related revenue leaks**, with more features planned.
+Portfolio: https://dc61g20ci9ox4.cloudfront.net/
