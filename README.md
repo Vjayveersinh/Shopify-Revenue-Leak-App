@@ -138,7 +138,11 @@ It acts like a **financial monitoring system for Shopify stores**.
 
 ## 📸 Screenshots
 
-_(Add dashboard screenshots here — highly recommended for impact)_
+### Dashboard Overview
+![Dashboard](./images/img_1.png)
+
+### Findings List
+![Findings](./images/img_2.png)
 
 ---
 
