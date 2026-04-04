@@ -4,9 +4,9 @@
 
 # 🛍️ Shopify Revenue Leak Detection System
 
-A Shopify analytics app that detects hidden revenue loss using real order data.
+A Shopify embedded app that detects hidden revenue loss using real order data and webhook-based event export.
 
-🚀 Built to help merchants identify where they are losing money — from high discounts to refunds and low order activity.
+🚀 Built to help merchants identify where they may be losing money — starting with high discount detection and expanding into a broader revenue intelligence system.
 
 ---
 
@@ -20,8 +20,11 @@ https://dc61g20ci9ox4.cloudfront.net/revenue-leak.html
 
 Shopify store owners often lose revenue without realizing it due to:
 - Excessive discounting
-- Frequent refunds
-- Low order volume despite store activity
+- Refunds and cancellations
+- Shipping mismatch
+- Inventory issues
+- App charges
+- Low conversion despite store activity
 
 Most dashboards show **what happened**, but not **where money is leaking**.
 
@@ -29,88 +32,66 @@ Most dashboards show **what happened**, but not **where money is leaking**.
 
 ## 🧠 Solution
 
-This app analyzes real Shopify order data and flags potential **revenue leaks** using rule-based detection.
+This app analyzes Shopify store data and flags potential **revenue leaks** using rule-based detection.
 
-It acts like a **financial monitoring system for Shopify stores**.
+The current MVP focuses on **high discount detection** and also includes a working **Shopify webhook export pipeline to AWS S3** for external cloud storage and future processing.
+
+It acts like a **revenue monitoring system for Shopify stores**.
 
 ---
 
-## 🔥 Key Features (MVP)
+## 🔥 Key Features (Current MVP)
 
 ### 1. 💸 High Discount Detection
 - Identifies orders with unusually high discount percentages
 - Severity levels:
-  - Medium: ≥ 30%
-  - High: ≥ 50%
+  - Medium: > 30%
+  - High: > 50%
+- Uses real Shopify order data
 
 ---
 
-### 2. 🔁 Refund Detection
-- Detects refunded orders and calculates revenue impact
-- Severity based on refund amount:
-  - Medium: ≥ $50
-  - High: ≥ $100
+### 2. ☁️ Shopify Webhook Export to AWS S3
+- Captures Shopify order-related webhook events
+- Exports webhook payloads to AWS S3
+- Creates a cloud-based data pipeline for future reporting and processing
 
 ---
 
-### 3. 📉 Low Order Volume Alert (Traffic Signal)
-- Flags potential store-level issues when order activity is low
-- Helps identify:
-  - Low traffic
-  - Poor conversion
-  - Store downtime issues
-
----
-
-### 4. 📊 Analytics Dashboard
-- Total findings overview
-- Total revenue at risk
-- Severity breakdown (High / Medium / Low)
-- Visual charts:
-  - Findings by type
-  - Amount at risk by category
-  - Severity distribution
-
----
-
-### 5. 🎯 Smart Filtering
-- Filter by:
-  - All findings
-  - Discount leaks
-  - Refund leaks
-  - Traffic alerts
-  - High severity issues
+### 3. 📊 Revenue Leak Dashboard
+- Displays revenue leak findings in a dashboard UI
+- Surfaces current MVP findings in a clear, readable format
+- Built to support future leak detection modules
 
 ---
 
 ## 🏗️ Tech Stack
 
 **Frontend**
-- React (Remix / React Router)
-- Custom UI (no external chart library for MVP)
+- React
+- React Router
+- Shopify embedded app UI patterns
 
 **Backend**
 - Node.js
-- Shopify Admin GraphQL API
+- Shopify Admin API
+- Shopify webhook handlers
 
-**Data Layer**
-- Prisma ORM
-
-**Cloud & Hosting**
-- AWS (S3 + CloudFront) — Portfolio hosting
+**Cloud / Infrastructure**
+- AWS S3
+- AWS CloudFront
 
 ---
 
 ## ⚙️ How It Works
 
 1. Authenticates Shopify admin session
-2. Fetches recent orders using GraphQL
-3. Applies rule-based detection:
-   - Discount analysis
-   - Refund analysis
-   - Store-level signals
-4. Generates structured findings
-5. Displays insights in a dashboard UI
+2. Pulls Shopify order data for analysis
+3. Applies rule-based detection logic
+4. Generates structured leak findings
+5. Receives Shopify webhook events
+6. Exports webhook payloads to AWS S3
+7. Displays findings in a dashboard UI
 
 ---
 
@@ -119,18 +100,41 @@ It acts like a **financial monitoring system for Shopify stores**.
 🚧 MVP (Minimum Viable Product)
 
 - ✔️ Real Shopify data integration  
-- ✔️ Core detection rules implemented  
-- ✔️ Dashboard UI with analytics  
-- ⏳ More advanced rules coming next  
+- ✔️ High discount detection implemented  
+- ✔️ Revenue leak dashboard built  
+- ✔️ Shopify webhook export to AWS S3 working  
+- ⏳ More leak detection rules planned  
+
+---
+
+## 🛠️ Issues Faced / Troubleshooting Done
+
+During development, I worked through several real implementation issues, including:
+
+- TypeScript file casing/import conflicts
+- Route and module resolution errors
+- Dashboard initially showing zero findings
+- Webhook subscriptions missing in app setup
+- Incorrect webhook route path configuration
+- Shopify order events not initially appearing in AWS S3
+- Portfolio deployment issues such as missing files / 404 errors
+
+Troubleshooting included:
+- Fixing file naming and import consistency
+- Correcting Shopify route and webhook path configuration
+- Testing with real Shopify orders
+- Reviewing and redeploying webhook subscriptions
+- Verifying successful order-related entries in AWS S3
 
 ---
 
 ## 🚀 Planned Features
 
-- Abandoned checkout detection
+- Refund and cancellation detection
 - Chargeback monitoring
-- Inventory / out-of-stock alerts
+- Abandoned checkout detection
 - Shipping cost vs revenue mismatch
+- Inventory / out-of-stock alerts
 - App subscription cost analysis
 - Real-time alerts / notifications
 
@@ -150,9 +154,9 @@ It acts like a **financial monitoring system for Shopify stores**.
 
 **Jayveersinh Vihol**
 
-- 💼 Application Support Engineer (5+ years)
-- 🧠 Building SaaS-style analytics tools
-- 🥇 Ranked #1 in CSAT & productivity (70+ advisors)
+- Application Support / Technical Support background
+- Building SaaS-style analytics tools
+- Interested in Shopify apps, cloud workflows, and product-focused engineering
 
 ---
 
@@ -167,9 +171,11 @@ It acts like a **financial monitoring system for Shopify stores**.
 
 This project demonstrates:
 - Real-world Shopify API integration
+- Shopify webhook handling
+- AWS S3 export workflow
 - Backend + frontend system design
 - Data-driven problem solving
-- Product thinking (not just coding)
+- Product thinking, not just coding
 
 ---
 
